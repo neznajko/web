@@ -35,9 +35,7 @@ class Api {
         return url;
     }
 ////////////////////////////////////////////////////////////////
-    // This is used for object's key, in browser's localStorage,
-    // but there are too many keys already in use, lets' name it
-    // in Python style; representation.
+    // This is used for object's key, in browser's localStorage.
     repr() { ///////////////////////////////////////////////////
         let str = "";
         ////////////////////////////////////////// instance keys
@@ -73,7 +71,6 @@ class Api {
             let response = await fetch( url );
             // .json() is also a Promise.
             apinfo = await response.json();
-            // here don't save 'Note: Thank you .. requests'
             localStorage[ key ] = JSON.stringify( apinfo );
         }
         this.avontage( apinfo );
@@ -158,7 +155,6 @@ class Intraday extends Api {
         }
         // Sort in increasing( a.k.a acceding )order.
         info.sort(( a, b ) => {
-            // There possibly can't be equal days.
             return ( a.day < b.day ) ? -1 : 1;
         });
         for( const y of info ){
@@ -218,6 +214,7 @@ const DOM = {
     days:     document.getElementById( "days"     ),
     barchart: document.getElementById( "barchart" ),
     timeaxis: document.getElementById( "timeaxis" ),
+    form:     document.getElementById( "form"     ),
     info:   {},
     //
     autoclean: function( cont ) {
@@ -260,12 +257,9 @@ const DOM = {
 }
 Barchart.prototype.dom = DOM;
 ////////////////////////////////////////////////////////////////////////
-DOM.srch.addEventListener( "input", e => {
-    const keywords = e.target.value;
-    if( keywords == "" ){
-        DOM.autoclean( DOM.list );
-        return;
-    }
+DOM.form.addEventListener( "submit", e => {
+    e.preventDefault();
+    const keywords = DOM.srch.value;
     const ctrl = new Search( keywords );
     ctrl.mkrequest();
 });
@@ -339,5 +333,5 @@ function getStat( dayinfo ){
     };
 }
 ////////////////////////////////////////////////////////////////////////
-// next: discard autocompletion, make it normal search, and add Submit
-// button
+// next: - discard autocompletion, make it normal search, and add Submit
+// button                                                            [v]

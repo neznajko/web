@@ -13,7 +13,7 @@
                 --mid-gray:   hsl( 30, 7%, 50%);
                 --mid-blue:   hsl( 210, 65%, 50%);
                 --dark-blue:  hsl( 240, 18%, 30%);
-                
+                --dark-blue2:  hsl(220, 71%, 32%);
                 --select-width: 50%;
             }
             * { /* that's some trick */
@@ -85,10 +85,12 @@
                 margin-top:       4vh;
                 width:            var(--select-width);
                 padding:          0.8vw;
-                background-color: var(--mid-blue);
                 color:            var(--light-gray);
-                border:           None;
+                border:           solid 1px grey;
                 font-family:      "Courier", serif;
+            }
+            #intval {
+                background-color: var(--dark-blue);                
             }
             #days {
                 background-color: var(--mid-gray);
@@ -112,7 +114,11 @@
                 width: 100%;
             }
             .value {
-                background-color: hsl(220, 71%, 32%);
+                background-color: var( --dark-blue2 );
+            }
+            #submit {
+                background-color: var( --mid-blue );
+                color: var( --light-gray );
             }
         </style>
     </head>
@@ -124,13 +130,14 @@
                 <div id="timeaxis"></div>
             </div>
             <div id="menu">
-                <form autocomplete="off">
+                <form id="form" autocomplete="off">
                     <div id="auto">
                         <input id="srch"
                                type="text"
                                placeholder="SRCH">
                         <div id="list" class="item"></div>
                     </div>
+                    <input id="submit" type="submit">
                 </form>
                 <select id="intval"></select>
                 <select id="days"></select>
