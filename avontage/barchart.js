@@ -2,13 +2,15 @@
 class Bar {
     constructor( value, flag, cont ){
         this.value = value;
-        this.flag  = flag;
+        this.flag  = flag; // vhether data was missing
         this.cont  = cont; // parent container
     }
     cmos( value ){ // Complimentary Metaoxide Semi-Conductor
         value = this.cont.scale*( value - this.cont.bas );
         value = this.cont.height - value;
-        return value;
+        // Return the value in percents of parent container's 
+        // height for handling resizing document's window.
+        return 100*value/this.cont.height;
     }
     render() {
         let bar = document.createElement( "div" );
@@ -20,7 +22,7 @@ class Bar {
         // value
         let value = document.createElement( "div" );
         value.setAttribute( "class", "value" );
-        value.style.height = this.cmos( this.value ) + 'px';
+        value.style.height = this.cmos( this.value ) + '%';
         bar.appendChild( value );
         //
         return bar;

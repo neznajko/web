@@ -8,19 +8,24 @@
         <link rel="shortcut icon" href="#" />
         <style>
             :root {
-                --dark-white: hsl( 2, 6%, 90%);
-                --light-gray: hsl( 15, 5%, 85%);
-                --mid-gray:   hsl( 30, 7%, 50%);
-                --mid-blue:   hsl( 210, 65%, 50%);
-                --dark-blue:  hsl( 240, 18%, 30%);
-                --dark-blue2:  hsl(220, 71%, 32%);
+                --dark-white:   hsl( 2, 6%, 90%);
+                --light-gray:   hsl( 15, 5%, 85%);
+                --mid-gray:     hsl( 30, 7%, 50%);
+                --mid-blue:     hsl( 210, 65%, 50%);
+                --dark-grey:    hsl( 240, 18%, 30%);
+                --dark-blue:    hsl(220, 71%, 32%);
+                --violet:       hsl( 250, 45%, 40% );
+                --red:          hsl( 15, 82%, 40% );
+                --yellow:       hsl( 45, 80%, 52% );
+                --light-green:  hsl(120,20%,35%);
+                --dark-green:   hsl(120,20%,32%);    
                 --select-width: 50%;
             }
             * { /* that's some trick */
                 box-sizing: border-box; 
             }
             body {
-                background-color: var(--dark-blue);
+                background-color: var( --dark-grey );
             }
             #cont {
                 padding:         2vw;
@@ -36,19 +41,19 @@
             #barchart {
                 height:           60vh;
                 display:          flex;
-                background-color: hsl( 250, 45%, 40% );
+                background-color: var( --violet );
             }
             #timeaxis {
                 height:           1vh;
                 display:          flex;
                 font-size:        4vh;
                 font-family:      monospace;
-                color:            hsl( 15, 82%, 40% );
-                background-color: hsl( 45, 80%, 52% );
+                color:            var( --red );
+                background-color: var( --yellow );
             }
             #auto {
-                width:    var(--select-width);
-                position: relative;     /* why?          [] */
+                width:    var( --select-width );
+                position: relative;
                 display:  inline-block; /* what is this? [] */
             }
             input, .item {
@@ -58,7 +63,7 @@
             }
             input[type=text] {
                 width:            100%;
-                background-color: var(--dark-white);
+                background-color: var( --dark-white );
             }
             #list {
                 position: absolute;
@@ -70,11 +75,11 @@
             }
             #list div {
                 cursor:           pointer;
-                background-color: var(--light-gray);
-                border-bottom:    1px solid var(--mid-gray);
+                background-color: var( --light-gray );
+                border-bottom:    1px solid var( --mid-gray );
             }
             #list div:hover {
-                background-color: var(--dark-white);
+                background-color: var( --dark-white );
             }
             #menu {
                 width:          38%;
@@ -83,27 +88,27 @@
             }
             select {
                 margin-top:       4vh;
-                width:            var(--select-width);
+                width:            var( --select-width );
                 padding:          0.8vw;
-                color:            var(--light-gray);
+                color:            var( --light-gray );
                 border:           solid 1px grey;
                 font-family:      "Courier", serif;
             }
             #intval {
-                background-color: var(--dark-blue);                
+                background-color: var( --dark-grey );                
             }
             #days {
-                background-color: var(--mid-gray);
+                background-color: var( --mid-gray );
             }
 
             p {
-                margin-top: 20px;
+                margin-top: 2vh;
             }
             .light-green {
-                background-color: hsl(120,20%,35%);    
+                background-color: var( --light-green );
             }
             .dark-green {
-                background-color: hsl(120,20%,32%);    
+                background-color: var( --dark-green );
             }
             .bar {
                 display: flex;
@@ -114,7 +119,7 @@
                 width: 100%;
             }
             .value {
-                background-color: var( --dark-blue2 );
+                background-color: var( --dark-blue );
             }
             #submit {
                 background-color: var( --mid-blue );

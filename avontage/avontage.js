@@ -333,5 +333,5 @@ function getStat( dayinfo ){
     };
 }
 ////////////////////////////////////////////////////////////////////////
-// next: - discard autocompletion, make it normal search, and add Submit
-// button                                                            [v]
+// next: + try figure how to scale the histogram 
+//       - plot values' axis
