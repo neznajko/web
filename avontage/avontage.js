@@ -208,14 +208,15 @@ Search.prototype[ "function" ] = "SYMBOL_SEARCH";
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 const DOM = {
-    srch:     document.getElementById( "srch"     ),
-    list:     document.getElementById( "list"     ),
-    intval:   document.getElementById( "intval"   ),
-    days:     document.getElementById( "days"     ),
-    barchart: document.getElementById( "barchart" ),
-    timeaxis: document.getElementById( "timeaxis" ),
-    form:     document.getElementById( "form"     ),
-    info:   {},
+    srch:     document.getElementById( "srch"      ),
+    list:     document.getElementById( "list"      ),
+    intval:   document.getElementById( "intval"    ),
+    days:     document.getElementById( "days"      ),
+    barchart: document.getElementById( "barchart"  ),
+    timeaxis: document.getElementById( "timeaxis"  ),
+    form:     document.getElementById( "form"      ),
+    vaxis:    document.getElementsByClassName( "vaxis" ),
+    info:      {},
     //
     autoclean: function( cont ) {
         // https://coderwall.com/
@@ -334,4 +335,4 @@ function getStat( dayinfo ){
 }
 ////////////////////////////////////////////////////////////////////////
 // next: + try figure how to scale the histogram 
-//       - plot values' axis
+//       - plot values' axis, between max and ave, and ave and min.

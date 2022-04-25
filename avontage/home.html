@@ -33,23 +33,61 @@
                 justify-content: center;
             }
             #plot {
-                width:          60vw;
-                display:        flex;
-                flex-direction: column;
-                padding-right:  2vw;
+                width:                 70vw;
+                display:               grid;
+                grid-template-columns: 85% 15%;
+                grid-template-rows:    15vh 15vh 15vh 15vh 15vh;
+                padding-right:         2vw;
             }
             #barchart {
-                height:           60vh;
+                /*height:           60vh;*/
                 display:          flex;
                 background-color: var( --violet );
+                grid-column:      1;
+                grid-row:         1/5;
             }
             #timeaxis {
-                height:           1vh;
+                /*height:           1vh;*/
                 display:          flex;
                 font-size:        4vh;
                 font-family:      monospace;
                 color:            var( --red );
                 background-color: var( --yellow );
+                grid-column: 1;
+                grid-row:    5;
+            }
+            .vaxis {
+                font-size:        5vh;
+            }
+            .vA {
+                background-color: hsl( 240, 60%, 40% );
+                color:            hsl( 20, 20%, 70% );
+                grid-column: 2;
+                grid-row:    1;
+            }
+            .vB {
+                background-color: hsl( 235, 65%, 50% );
+                color:            hsl( 20, 20%, 70% );
+                grid-column: 2;
+                grid-row:    2;
+            }
+            .vC {
+                background-color: hsl( 230, 70%, 60% );
+                color:            hsl( 235, 65%, 50% );
+                grid-column: 2;
+                grid-row:    3;
+            }
+            .vD {
+                background-color: hsl( 220, 80%, 70% );
+                color:            hsl( 240, 60%, 40% );
+                grid-column: 2;
+                grid-row:    4;
+            }
+            .vE {
+                background-color: hsl( 200, 20%, 70% );
+                color:            hsl( 250, 40%, 20% );
+                grid-column: 2;
+                grid-row:    5;
             }
             #auto {
                 width:    var( --select-width );
@@ -100,7 +138,6 @@
             #days {
                 background-color: var( --mid-gray );
             }
-
             p {
                 margin-top: 2vh;
             }
@@ -132,6 +169,11 @@
         <div id="cont">
             <div id="plot">
                 <div id="barchart"></div>
+                <div class="vaxis vA"></div>
+                <div class="vaxis vB"></div>
+                <div class="vaxis vC"></div>
+                <div class="vaxis vD"></div>
+                <div class="vaxis vE"></div>
                 <div id="timeaxis"></div>
             </div>
             <div id="menu">
@@ -153,5 +195,88 @@
 </html>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!--log:
+https://www.valueresearchonline.com/stories/23354/
+intrinsic-value-according-to-buffett-and-munger/
+
+Intrinsic value is perhaps one of the most important concepts in
+value investing as it determines whether a stock offers value or
+not.
+But it is also one of the most confounding concepts.
+The simplest explanation of intrinsic value is offered by Warren
+Buffett himself.
+It is the "discounted value of the cash that can be taken out
+of a business during its remaining life."
+The definition alone opens up a Pandora's box. 
+Estimating how much cash the business can generate during its
+remaining lifetime may be complicated.
+If you manage to do that successfully, then there is the grey
+area of using discounting - what rate to use?
+Buffett has not explicitly mentioned how he calculates intrinsic
+value, though he has dropped broad hints about how he goes about
+it.
+But because there is no clarity about intrinsic value, analysts
+and investors try very hard to get intrinsic value right and
+that is where many falter.
+
+Busting the Myth As Charlie Munger points out, it may not be
+easy to pin down intrinsic value. He says, "When you're trying
+to determine intrinsic value and margin of safety, there's no
+one easy method that can simply be mechanically applied by a
+computer that will make someone who pushes the buttons rich. You
+have to apply a lot of models. I don't think you can become a
+great investor rapidly, no more than you can become a bone-tumor
+pathologist quickly". (Berkshire Annual Meeting 2007).
+
+Here is an easy explanation by Buffett of intrinsic value. Says
+Buffett, "Let's say you decide you want to buy a farm and you
+make calculations that you can make $70/acre as the owner. How
+much will you pay [per acre for that farm]? Do you assume
+agriculture will get better so you can increase yields? Do you
+assume prices will go up? You might decide you wanted a 7 per
+cent return, so you'd pay $1,000/acre. If it's for sale at $800,
+you buy, but if it's at $1,200, you don't." (Berkshire Annual
+Meeting 2007).
+
+Here's another way to look at intrinsic value. "If you were
+thinking about paying $900,000 or $1.3 million for a McDonald's
+stand, you'd think about things like whether people will keep
+eating hamburgers and whether McDonald's could change the
+franchise agreement. You have to know what you're doing and
+whether you're within your circle of competence," said
+Buffett. (Berkshire Annual Meeting 2008).  In his 2010 Annual
+Letter Buffett described a "Two-Column Valuation Method" to
+arrive at the Intrinsic value. Using Berkshire as an example he
+divided his firm into investments and non-insurance
+business. The first part involved arriving at the per share
+investments. Next he calculated the pre-tax earnings of his
+other businesses and applied an appropriate multiple to the
+earnings. Finally he added this amount to the per share
+investments to arrive at the intrinsic value.
+
+At best, intrinsic value is an estimate. "Intrinsic value is an
+estimate rather than a precise figure, and it is additionally an
+estimate that must be changed if interest rates move or
+forecasts of future cash flows are revised." You don't need to
+get intrinsic value figures right to the second decimal
+place. Buffett points out, "If we see someone who weighs 300 or
+320 pounds, it doesn't matter - we know they're fat. We look for
+fat businesses.'' (Berkshire Annual Meeting 2007).
+
+Intrinsic value can sometimes be much lower than the company's
+stated book value. In the "Owners Manual" dated 1999, Buffet
+gave the example of Berkshire in 1964. The book value of
+Berkshire was $19.46/share. According to Buffett, the intrinsic
+value was far lower because Berkshire was struggling in a low
+profitability textile business. The textile assets did not have
+going-concern or liquidation values equal to their carrying
+values.
+
+In the end, it pays to keep in mind Munger's statement when
+considering Intrinsic value. "We have no system for estimating
+the correct value of all businesses. We put almost all in the
+'too hard' pile and sift through a few easy ones". (Berkshire
+Annual Meeting 2007).
+
+This story was published on an earlier date.
   -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

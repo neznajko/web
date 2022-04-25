@@ -78,7 +78,8 @@ export class Barchart {
         }
     }
     render() {
-        const timeaxis = this.dom.timeaxis;
+        const timeaxis  = this.dom.timeaxis;
+        const vaxis = this.dom.vaxis;
         this.dom.autoclean( timeaxis );
         this.dom.autoclean( this.cont );
         const markers = [
@@ -103,6 +104,12 @@ export class Barchart {
                 p++;
             }
             timeaxis.appendChild( tbar );
+        }
+        // value axis
+        const n = vaxis.length;
+        const va_marker = ( this.cel - this.bas )/( n - 1 );
+        for( let j = 0; j < n; j++ ){
+            vaxis[ j ].innerText = ( this.cel - j*va_marker ).toFixed( 1 );
         }
     }
 }
