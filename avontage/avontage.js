@@ -334,5 +334,4 @@ function getStat( dayinfo ){
     };
 }
 ////////////////////////////////////////////////////////////////////////
-// next: + try figure how to scale the histogram 
-//       - plot values' axis, between max and ave, and ave and min.
+// next: ?
