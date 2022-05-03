@@ -131,7 +131,7 @@ class Intraday extends Api {
         const key = `Time Series (${this.interval})`;
         if( apinfo[ key ] === undefined ){
             delete localStorage[ key ];
-            console.log( "yeh" );
+            console.log( "yeh:", apinfo );
             return;
         }
         apinfo = apinfo[ key ];
@@ -215,6 +215,7 @@ const DOM = {
     barchart: document.getElementById( "barchart"  ),
     timeaxis: document.getElementById( "timeaxis"  ),
     form:     document.getElementById( "form"      ),
+    echo:     document.getElementById( "echo"      ),
     vaxis:    document.getElementsByClassName( "vaxis" ),
     info:      {},
     //
@@ -233,15 +234,28 @@ const DOM = {
             const item = document.createElement( "div" );
             item.setAttribute( "class", "item" );
             item.innerText = y[ j ][ "1. symbol" ];
+            console.log( y[ j ]);
             item.addEventListener( "click", selectItem );
+            item.addEventListener( "mouseover", () => {
+                DOM.echo.innerHTML = `<p>${y[ j ][ "2. name" ]}</p>`
+            });
             DOM.list.appendChild( item );
         }
     },
     initdays: function() {
         DOM.autoclean( DOM.days );
         const n = DOM.info.length;
+        function timefomt( day ) {
+            // day = [ year, month, day ]
+            const month = [
+                "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+            ];
+            return( day[ 2 ] + " " +
+                    month[ day[ 1 ] - 1 ] + " " + day[ 0 ]);
+        }
         for( let j = 0; j < n; j++ ){
-            const key = DOM.info[ j ].day.join( ' / ' );
+            const key = timefomt( DOM.info[ j ].day );
             const val = j;
             let day = document.createElement( "option" );
             day.value = val;
@@ -284,6 +298,14 @@ Api.prototype.dom = DOM;
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
+function clear() {
+    const date = (new Date()).toLocaleDateString();
+    if( localStorage[ "date" ] !== date ){
+        console.log( "Clearing local storage .." );
+        localStorage.clear();
+    }
+    localStorage[ "date" ] = date;
+}
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////
 function boot( stock ){
@@ -307,6 +329,7 @@ function boot( stock ){
                                DOM.intval.value );
     iday.mkrequest();
 }
+clear();
 boot( 'IBM' );
 ////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////
@@ -334,4 +357,8 @@ function getStat( dayinfo ){
     };
 }
 ////////////////////////////////////////////////////////////////////////
-// next: ?
+// next: - add symbol info in the search results                     [x]
+//       - review the code                                           [~]
+//       - change day format to 04,April'22 or something             [v]
+//       - make template container for volume and add echo area      [v]
+//       - vhen making request dump it to echo area                  [~]
