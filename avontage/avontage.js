@@ -65,6 +65,7 @@ class Api {
             apinfo = JSON.parse( localStorage[ key ]);
         } else {
             const url = this.geturl();
+            this.dom.echo.innerHTML = "<p>Hold on, making a request ..</p>";
             console.log( "Hold on, making a request ..\n" + url );
             // The response is a Promise Object, and if I'm not
             // mistaken await marks the line as synchronous code.
@@ -72,6 +73,7 @@ class Api {
             // .json() is also a Promise.
             apinfo = await response.json();
             localStorage[ key ] = JSON.stringify( apinfo );
+            this.dom.echo.innerHTML = "";
         }
         this.avontage( apinfo );
     }
@@ -131,7 +133,8 @@ class Intraday extends Api {
         const key = `Time Series (${this.interval})`;
         if( apinfo[ key ] === undefined ){
             delete localStorage[ key ];
-            console.log( "yeh:", apinfo );
+            this.dom.echo.innerHTML = "<p>Grünfeld!</p>";
+            console.log( apinfo );
             return;
         }
         apinfo = apinfo[ key ];
@@ -237,7 +240,13 @@ const DOM = {
             console.log( y[ j ]);
             item.addEventListener( "click", selectItem );
             item.addEventListener( "mouseover", () => {
-                DOM.echo.innerHTML = `<p>${y[ j ][ "2. name" ]}</p>`
+                DOM.echo.innerHTML = (`<p>
+${y[ j ][ "1. symbol"     ]}<br>
+${y[ j ][ "2. name"       ]}<br>
+${y[ j ][ "3. type"       ]}<br>
+${y[ j ][ "4. region"     ]}<br>
+${y[ j ][ "5. marketOpen" ]}<br>
+</p>`);
             });
             DOM.list.appendChild( item );
         }
@@ -357,8 +366,6 @@ function getStat( dayinfo ){
     };
 }
 ////////////////////////////////////////////////////////////////////////
-// next: - add symbol info in the search results                     [x]
-//       - review the code                                           [~]
-//       - change day format to 04,April'22 or something             [v]
-//       - make template container for volume and add echo area      [v]
-//       - vhen making request dump it to echo area                  [~]
+// next: - vhen making request dump it to echo area                  [v]
+//       - add event listeners to bars                               [ ]
+//       - try mousewheel changing days                              [ ]
