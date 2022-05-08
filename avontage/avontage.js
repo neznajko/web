@@ -300,6 +300,17 @@ DOM.days.addEventListener( "change", e => {
     const dayinfo = DOM.info[ e.target.value ];
     let barchart = new Barchart( dayinfo, DOM.barchart );
     barchart.render();
+    const n = barchart.bars.length;
+    for( let j = 0; j < n; j++ ){
+        const div = barchart.cont.children[ j ];
+        div.addEventListener( "mouseenter", () => {
+            const value = barchart.bars[ j ].value.toFixed( 1 );
+            DOM.echo.innerHTML = `<p>${value}</p>`;
+        });
+        div.addEventListener( "mouseleave", () => {
+            DOM.echo.innerHTML = "";
+        });
+    }
 });
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -367,5 +378,6 @@ function getStat( dayinfo ){
 }
 ////////////////////////////////////////////////////////////////////////
 // next: - vhen making request dump it to echo area                  [v]
-//       - add event listeners to bars                               [ ]
+//       - add event listeners to bars here                          [v]
 //       - try mousewheel changing days                              [ ]
+//       - change day color to red                                   [ ]

@@ -24,6 +24,12 @@ class Bar {
         value.setAttribute( "class", "value" );
         value.style.height = this.cmos( this.value ) + '%';
         bar.appendChild( value );
+        bar.addEventListener( "mouseenter", () => {
+            value.setAttribute( "class", "value border" );
+        });
+        bar.addEventListener( "mouseleave", () => {
+            value.setAttribute( "class", "value" );
+        });
         //
         return bar;
     }
