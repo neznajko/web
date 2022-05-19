@@ -1,0 +1,677 @@
+<!------____-----_-_-____---_-----_---__---_---____---_____----____---_-_-_-_-->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Yaaa</title>
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
+        <style>
+            :root {
+                --light-clr1: hsl( 18, 20%, 75% );
+                --light-clr2: hsl( 35, 40%, 45% );
+                --light-clr3: hsl( 28, 45%, 50% );
+                --light-clr4: hsl( 18, 45%, 50% );
+                --twitter:    hsl( 210, 90%, 60%);
+                --dark-clr1:  hsl( 240, 50%, 30%);
+                --dark-clr2:  hsl( 280, 40%, 25%);
+                --cloud-bgr:  hsl( 15, 40%, 85% );
+                --skew-bgr:   hsl( 18, 20%, 75% );
+                --footer-fgr: hsl(240, 50%, 60% );
+                --footer-bgr: hsl(240, 50%, 20% );
+                --footer-alt: hsl(240, 50%, 30 %);
+                --footer-hvr: hsl(240, 50%, 80% );
+                --bar-height: 1px;
+            }
+            * {
+                box-sizing: border-box; 
+            }
+            body, html {
+                height: 150%;
+            }
+            body {
+                background:     var(--dark-clr1);
+                margin:         0;
+                display:        flex;
+                flex-direction: column;
+                align-items:    center
+            }
+            a {
+                text-decoration: none;
+                color:           inherit;
+            }
+            .header {
+                height:          40%;
+                width:           100%;
+                background:      url('img/supercomp.png') no-repeat center center fixed;
+                background-size: cover;
+                display:         flex;
+                flex-direction:  column;
+                align-items:     center;
+            }
+            .nav {
+                width:          80%;
+                display:        flex;
+                flex-direction: column;
+                position:       relative;
+            }
+            .navbar {
+                margin-top: 20px;
+                display:    flex;
+            }
+            .logo {
+                width: 40%;
+            }
+            .item-cont {
+                width:           60%;
+                display:         flex;
+                justify-content: space-between;
+            }
+            .item {
+                color:       white;
+                font-size:   1.5vw;
+                font-family: monospace;
+                margin-top:  0px;
+            }
+            .hrz {
+                height:           var(--bar-height);
+                background-color: hsl(15, 0%, 30%);
+                width:            100%;
+                position:         absolute;
+            }
+            .bar {
+                height:  var(--bar-height);
+                z-index: 99;
+            }                        
+            .hello {
+                display:         flex;
+                flex-direction:  column;
+                color:           white;
+                justify-content: center;
+                align-items:     center;
+                height:          100%;
+            }
+            .wow {
+                font-size:     6vw;
+                font-family:   "Ariel", monospace;
+                font-weight:   bold;
+                margin-bottom: 2vw;
+            }
+            .ital {
+                font-family:   "Courier", sans-serif;
+                font-size:     2vw;
+                font-style:    italic;
+                margin-top:    2vw;
+            }
+            /*
+             * S K E W
+             */
+            .skew {
+                background:     var(--skew-bgr);
+                display:        flex;
+                flex-direction: column;
+                height:         30%;
+                width:          100%;
+                align-items:    center;
+            }
+            .upco {
+                background:  hsl( 70, 80%, 30% );
+                height:      20%;
+                width:       100%;
+                display:     flex;
+                color:       white;
+                font-size:   30px;
+                font-family: monospace;
+            }
+            .link {
+                width:           50%;
+                display:         flex;
+                justify-content: center;
+                align-items:     center;
+            }
+            .left {
+                background-color: hsl( 120, 43%, 10% );
+                transform:        skew( -18deg, 0);
+                margin-left:      -20px;
+            }
+            #bas {
+                transform: skew( 18deg, 0);
+            }
+            /**/
+            .midco { /* mid-container */
+                width:       80%;
+                height:      50%;
+                display:     flex;
+                align-items: center;
+            }
+            .lowco { /* office */
+                width:            100%;
+                height:           30%;
+                background:       url('img/office.png') no-repeat;
+                background-size:  cover;
+                color:            var(--skew-bgr);
+                display:          flex;
+                flex-direction:   column;
+                justify-content:  center;
+                align-items:      center;
+            }
+            /**/
+            #quotient {
+                height:           40%;
+                width:            80%;
+            }
+            .reminder {
+                display:          flex;
+                height:           40%;
+                width:            50%;
+                justify-content:  center;
+                align-items:      center;
+            }
+            #nom {
+            }
+            .vr {
+                margin-left:      10px;
+                height:           1.5vw;
+                width:            1px;
+                background-color: var(--skew-bgr); 
+            }
+            #dots {
+                display: flex;
+            }
+            .dot2 {
+                height:        5px;
+                width:         5px;
+                border-radius: 50%;
+                border:        solid 1px white;
+                margin-left:   10px;
+            }
+            /**/
+            .about {
+                display:        flex;
+                flex-direction: column;
+                width:          40%;
+            }
+            .lab {
+                display:     flex;
+                color:       black;
+                font-size:   4vw;
+                font-weight: 900;
+            }
+            .mono {
+                padding-left: 1vw;
+                font-family:  monospace;
+            }
+            .text {
+                text-align:   justify;
+                text-justify: inter-character;
+                font-size:    1vw;
+            }
+            .dot {
+                background-image:    linear-gradient(grey 18%, rgba(255,255,255,0) 0%);
+                background-position: center;
+                background-size:     2px 10px;
+                background-repeat:   repeat-y;
+                width:               10%;
+                height:              80%;
+                background-color:    var(--skew-bgr);
+            }
+            .users {
+                width:            50%;
+                height:           80%;
+                display:          flex;
+                justify-content:  space-between;
+            }
+            .user {
+                display:        flex;
+                flex-direction: column;
+                align-items:    center;
+                width:          25%;
+                justify-content: space-around;
+            }
+            img.avatar {
+                border-radius: 50%;
+                border:        solid 10px hsl(48, 35%, 60%);
+                max-width:         100%;
+                max-height:    100%;
+            }
+            .name {
+                font-size: 1vw;
+            }
+            .position {
+                font-size: 1vw;
+            }
+            .social {                
+                width:           80%;
+                display:         flex;
+                justify-content: space-around;
+                align-items:     center;
+                font-size:       1.2vw;
+            }
+            .social a:hover {
+                color: var(--twitter);
+            }
+            .selected {
+                color: var(--twitter);
+            }
+            /*
+             * S H E L F
+             */
+            .shelf {
+                display:         flex;
+                justify-content: space-around;
+                align-items:     center;
+                width:           100%;
+                height:          15%;
+                background:      var(--cloud-bgr);
+                padding-left:    10%;
+                padding-right:   10%;
+            }
+            .menu {
+                display:         flex;
+                flex-direction:  column;
+                justify-content: space-around;
+                align-items:     center;
+                background:      var(--cloud-bgr);
+                height:          80%;
+                width:           20%;
+            }
+            .flex-cont {
+                display:         flex;
+                justify-content: center;
+                align-items:     center;
+            }
+            .circ {
+                border-radius: 50%;
+                color:         var(--cloud-bgr);
+                font-size:     5vw;
+                width:         10vw;
+                height:        10vw;
+             }
+            .bolt {
+                background: hsl(5,70%,50%);
+            }
+            .cloud {
+                background: hsl(260,50%,40%);
+            }
+            .arrows-alt {
+                background: hsl(40,80%,50%);
+            }
+            .comments {
+                background: hsl(220,60%,40%);
+            }
+            .contact {
+                font-size:   1.6vw;
+                font-weight: 900;
+                font-family: monospace;
+            }
+            .txt {
+                text-align:   justify;
+                text-justify: inter-word;
+                opacity:      60%;
+            }
+            /**/
+            /*
+             * F O O T E R
+             */
+            .footer {
+                height:                15%;
+                width:                 100%;
+                padding:               8% 10% 8% 10%;
+                display:               grid;
+                grid-template-columns: 20% 15% 13% 12% 15% 25%;
+                background:            var(--footer-bgr);
+                color:                 var(--footer-fgr);
+                font-size:             1.1vw;
+
+            }
+            .A {
+                display:         flex;
+                flex-direction:  column;
+                justify-content: space-between;
+            }
+            .ftxt {
+                text-align:   justify;
+                text-justify: inter-character;
+            }
+            #designer {
+                font-weight: 800;
+            }
+            .B {
+                display:         flex;
+                justify-content: center;
+            }
+            .fvr {
+                height:     100%;
+                width:      1px;
+                background: var(--footer-fgr);
+                opacity:    80%;
+            }
+            .C {
+            }
+            .D {
+            }
+            .F {
+                
+            }
+            .flink:hover {
+                color: var(--footer-hvr);
+            }
+            .flink a:hover {
+                padding-left: 0.5vw;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="nav">
+                <div class="navbar">
+                    <div class="logo">
+                        <a href="#"><img src="img/logo.png"></a>
+                    </div>
+                    <div class="item-cont">
+                        <div class="item"><a href="#">Home</a></div>
+                        <div class="item"><a href="#">Domain</a></div>
+                        <div class="item"><a href="#">Hosting</a></div>
+                        <div class="item"><a href="#">Clients</a></div>
+                        <div class="item"><a href="#">Blog</a></div>
+                        <div class="item"><a href="#">Support</a></div>
+                    </div>
+                </div>
+                <div class="navbar">
+                    <div class="logo"></div>
+                    <div class="hrz"></div>
+                    <div id="undaline" class="item-cont"></div>
+                </div>
+            </div>
+            <div class="hello">
+                <div class="wow">HELLO!</div>
+                <div class="ital">We love our work..</div>
+                <div class="ital">And we're taking it seriously..</div>
+            </div>
+        </div>
+        
+        <div class="skew">
+            <div class="upco">
+                <div class="link left">
+                    <div id="bas"><a href="#">Login</a></div>
+                </div>
+                <div class="link ryte">
+                    <div><a href="#">Register</a></div>
+                </div>
+            </div>
+            <div class="midco">
+                <div class="about">
+                    <div class="lab">
+                        <div>About</div>
+                        <div class="mono">us</div>
+                    </div>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempora
+                        incididunt ut labore et dolore magna
+                        aliqua. Maecenas volutpat blandit aliquam etiam
+                        erat velit scelerisque in dictum. Facilisis
+                        volutpat est velit egestas dui id. Ipsum
+                        suspendisse ultrices gravida dictum
+                        fusce. Tincidunt arcu non sodales neque sodales
+                        ut etiam sit.
+                    </div>
+                </div>
+                <div class="dot"></div>
+                <div id="users-cont" class="users"></div>
+            </div>
+            <div class="lowco">
+                <div id="quotient"></div>
+                <div class="reminder">
+                    <div id="nom"></div>
+                    <div class="vr"></div>
+                    <div id="dots"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cloud" class="shelf"></div>
+
+        <div class="footer">
+            <div class="A">
+                <div class="ftxt">
+                    Quisque pulvinar sollicitudin ante, vitae bibendum leo
+                    tristique non. Nulla semper leo nec est consequat
+                    malesuada.
+                </div>
+                <div>
+                    Design by <span id="designer">Mert Can Eyriyer</span>.
+                </div>
+            </div>
+            <div class="B">
+                <div class="fvr"></div>
+            </div>
+            <div class="A C">
+                <div class="flink">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="#">Support</a>
+                </div>
+                <div class="flink">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="#">Acount</a>
+                </div>
+                <div class="flink">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="#">Product Catalog</a>
+                </div>
+                <div class="flink">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="#">Shortcodes</a>
+                </div>
+            </div>
+            <div class="A D">
+                <div class="flink">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="#">Site Map</a>
+                </div>
+                <div class="flink">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="#">Whois Search</a>
+                </div>
+                <div class="flink">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="#">Web Mail</a>
+                </div>
+                <div class="flink">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="#">Find Domain</a>
+                </div>
+            </div>
+            <div class="B">
+                <div class="fvr"></div>
+            </div>
+            <div class="A F">
+                <div><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; 0000-0000-0000</div>
+                <div><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp informationteam@ghosthost.com</div>
+                <div>Lorem ipsum Street, Lorem Avenue.</div>
+                <div>Lorem ipsum</div>
+            </div>
+        </div>
+        
+        <script>
+            let items = document.getElementsByClassName( "item" );
+            let undaline = document.getElementById( "undaline" );
+            const n = items.length;
+            for( let j = 0; j < n; j++ ){
+                let bar = document.createElement( "div" );
+                bar.setAttribute( "class", "bar" );
+                undaline.appendChild( bar );
+                //
+                bar.style.width = items[j].offsetWidth + 'px';
+                items[j].addEventListener( "mouseover", e => {
+                    bar.style.backgroundColor = 'white';
+                });
+                items[j].addEventListener( "mouseout", e => {
+                    bar.style.backgroundColor = '';
+                });
+            }
+            //
+            // skew
+            //
+            const users = [
+                {
+                    name:  "Johnny",
+                    quote: "\"In ligula libero, volutpat eu risus id, \
+ornare dictum libero. Etiam varius in ex eu tristique.\"",
+                },
+                {
+                    name: "John",
+                    quote: "\"Vestibulum elit magna, venenatis ut risus ac, \
+vestibulum sodales ligula. Sed bibendum massa sed felis lacinia, eu \
+aliquet sapien molestie.\"",
+                },
+                {
+                    name: "Johnathan",
+                    quote: "\"Curabitur consectetur tempus sapien, eu \
+lacinia massa posuere sit amet.\"",
+                }
+            ];
+            function user_cons( j, name ){
+                let div = document.createElement( "div" );
+                div.setAttribute( "class", "user" );
+                div.innerHTML = `
+                    <img class="avatar" src="img/team-${j + 1}.png">
+                    <div class="name">
+                        ${name} Doe
+                    </div>
+                    <div class="position">
+                        Designer
+                    </div>
+                    <div class="social">
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a>
+                            <i class="fa fa-link"></i>
+                        </a>
+                    </div>`;
+                return div;
+            }
+            const ucon = document.getElementById( "users-cont" );
+            for( let j = 0; j < users.length; j++ ){
+                ucon.appendChild( user_cons( j, users[j].name ));
+            }
+            const links = document.getElementsByClassName( "fa fa-link" );
+            // Build dots
+            let dots  = document.getElementById( "dots" );
+            for( let j = 0; j < links.length; j++ ){
+                const dot = document.createElement( "div" );
+                dot.setAttribute( "class", "dot2" );
+                dots.appendChild( dot );
+            }
+            // Add event listeners
+            dots = document.getElementsByClassName( "dot2" );
+            const nom = document.getElementById( "nom" );
+            const quotient = document.getElementById( "quotient" );
+            function clear() {
+                quotient.innerHTML = "";
+                nom.innerHTML = '';
+                for( const dot of dots ){
+                    dot.style.backgroundColor = '';
+                }
+                for( let j = 0; j < links.length; j++ ){
+                    links[j].setAttribute( "class", "fa fa-link" );
+                }
+            }
+            for( let j = 0; j < links.length; j++ ){
+                links[j].addEventListener( "click", e => {
+                    clear();
+                    dots[j].style.backgroundColor = "white";
+                    nom.innerHTML = `${users[j].name} Doe`;
+                    quotient.innerHTML = `${users[j].quote}`;
+                    e.target.setAttribute( "class", "fa fa-link selected" );
+                });
+            }
+            links[0].click();
+            //
+            // shelf
+            //
+            let cloud = document.getElementById( "cloud" );
+            function cons_cloud( item, lab ){
+                let div = document.createElement( "div" );
+                div.setAttribute( "class", "menu" );
+                div.innerHTML = `
+                <div class="${item} flex-cont circ">
+                    <i class="fa fa-${item}" aria-hidden="true"></i>
+                </div>
+                <div class="contact">${lab}</div>
+                <div class="txt">
+                    Nulla aliquam metus eget tincidunt ullamcorper.
+                    Proin nec convallis neque.
+                </div>`;
+                return div;
+            }
+            cloud.appendChild( cons_cloud( "bolt", "Fast Servers" ));
+            cloud.appendChild( cons_cloud( "cloud", "Cloud Servers" ));
+            cloud.appendChild( cons_cloud( "arrows-alt", "Domain Transfer" ));
+            cloud.appendChild( cons_cloud( "comments", "Live Support" ));
+        </script>
+    </body>
+</html>
+<!--__-___---_-_-_-__---___-_-----___--___--__--_-_-____-----_--____---_____--->
+<!-- log:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+venenatis tempor neque, eget eleifend nisi mattis lobortis. Aliquam sit
+amet facilisis lectus. Donec congue nisi neque, ut rutrum nunc dignissim
+id. Aliquam id elementum risus. Curabitur rutrum ac purus at
+consequat. Nulla aliquam metus eget tincidunt ullamcorper. Pellentesque
+velit risus, maximus sit amet porta vitae, lacinia eget augue. Phasellus
+eu rutrum est. Maecenas at purus vitae ligula tristique
+dapibus. Praesent elementum, arcu ut iaculis fringilla, elit neque
+gravida dui, sit amet auctor sapien est scelerisque purus. Vivamus porta
+elit ac risus tristique vulputate. Sed vestibulum augue ante, at
+pellentesque tellus dictum vel. Vivamus erat diam, ultrices at ultrices
+at, elementum interdum quam. Aliquam erat volutpat. Sed vitae sagittis
+nulla, in aliquet magna. Nullam rhoncus facilisis sem in dapibus.
+
+Quisque pulvinar sollicitudin ante, vitae bibendum leo tristique
+non. Nulla semper leo nec est consequat malesuada. Mauris fermentum
+ultrices orci. Sed imperdiet, justo eget tincidunt porta, orci diam
+mattis nisl, eget sodales arcu leo eu felis. In eget enim sit amet lorem
+varius interdum sed non ligula. Pellentesque luctus risus sed odio
+tristique interdum eget vel dui. Suspendisse potenti. Duis porttitor
+ultrices rhoncus. Praesent interdum ac mauris vel tempus. Donec sodales
+turpis odio, quis posuere magna consectetur aliquet. Suspendisse
+faucibus dolor sed ligula bibendum rutrum. Duis euismod semper
+pretium. In vitae dolor justo. Proin nec convallis neque.
+
+Quisque tempus felis nec enim congue dictum. Vestibulum dapibus pretium
+enim. Proin tempus arcu ante, vitae aliquam leo auctor eu. Ut
+condimentum nec ante et ultricies. Vestibulum a massa non orci mattis
+rutrum vel at sem. In consectetur velit non enim scelerisque, sit amet
+cursus lorem facilisis. Fusce eget nulla quis elit semper
+egestas. Curabitur ante massa, vulputate vitae nunc ut, accumsan
+ultricies quam. Donec in turpis in sapien ornare porta. Quisque non
+malesuada purus, non ultricies mi. Duis pellentesque, diam sit amet
+posuere venenatis, leo odio porttitor dui, nec aliquam eros lectus et
+nulla. Praesent aliquam commodo semper. Sed magna nisi, eleifend quis
+elit eget, scelerisque convallis nisl.
+
+In hac habitasse platea dictumst. Sed ultrices placerat
+suscipit. Phasellus varius est in orci ullamcorper bibendum. Aliquam
+posuere risus nec nibh ultrices varius. Quisque porttitor sodales nulla
+in pulvinar. Curabitur sed maximus felis, vel facilisis
+orci. Suspendisse in nulla consectetur, tempus quam commodo, volutpat
+sem. Morbi bibendum enim accumsan urna vestibulum, id maximus odio
+porta.
+
+Aenean egestas in nulla in facilisis. Nullam gravida tristique libero a
+aliquam. Duis ac vehicula purus, in ultrices quam. Curabitur nec erat
+commodo, tincidunt quam quis, aliquam metus. Quisque mollis risus ac
+purus efficitur vestibulum. Curabitur convallis, est efficitur viverra
+venenatis, turpis arcu molestie ipsum, sed elementum dolor lacus non
+velit. Integer eget volutpat arcu. Donec luctus tincidunt ligula, ut
+auctor lacus ultrices ac. Nam quis sapien tellus. Vivamus sit amet urna
+ut erat porta rhoncus. In et neque sit amet velit imperdiet sodales et
+in sapien. Quisque condimentum tristique pellentesque.
+                                                            W E 4 E R
+-->
