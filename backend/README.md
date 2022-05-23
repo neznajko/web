@@ -7,7 +7,7 @@ java io.pliant.internship2022.service.locator.ServiceLocatorImpl
 # Minimum differences
 The code is in the ``MinDif.java`` file. It uses the *Jackson* library,
 which can be found in the **jar/jackson/** sub-directory. To compile and
-rund the program type for example ``make mindif <_esting/input5.json``, which basically do the following:
+run the program type for example ``make mindif <_esting/input5.json``, which basically do the following:
 ```sh
 javac -Xlint -cp ".:./jar/jackson/*" -d "./bin" MinDif.java
 java -cp ".:./jar/jackson/*:./bin" MinDif <_esting/input5.json
