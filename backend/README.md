@@ -19,7 +19,7 @@ command line. I couldn't found anything better than the brute force
 # Mqtt
 The program is in *Mqtt.java* file, it uses the ***eclipce/paho*** library
 which can be found at *jar/mqtt/* directory. It subscribes to everything from **pliant.io**, and if the topic is *pliant.io/internship/2020/backend/a2/input*, calculates the minimum difference and publishes the results to
-the corresponding output topic. As usual to run the program type
+the corresponding output topic. As usual to run the program type:
 ```sh
 make mqtt
 ```
