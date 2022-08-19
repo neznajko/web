@@ -23,5 +23,6 @@ urlpatterns = [
     path( 'admin/', admin.site.urls ),
     path( 'api/', views.pro_view ),
     path( 'api/<int:pk>', views.duct_view ),
+    path( 'api/stats/', views.stat_view ),
 ]
 ################################################################

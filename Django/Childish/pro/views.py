@@ -1,4 +1,10 @@
 ################################################################
+import json
+from datetime import datetime
+################################################################
+from django.http import HttpResponse
+from django.db.models import Sum
+################################################################
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
@@ -6,6 +12,8 @@ from rest_framework import status
 ################################################################
 from .models import Order
 from .serializers import OrderSerializer
+################################################################
+FOMAT = '%Y-%m-%d'
 ################################################################
 @api_view([ 'GET', 'POST' ])
 def pro_view( request ):
@@ -47,6 +55,35 @@ def duct_view( request, pk ):
         order.delete()
         return Response( status=status.HTTP_204_NO_CONTENT )
 ################################################################
-# log: 1:13 - 1:24 = 10min
-#      1:47 - 2:16 = 26min
-#      2:41 - 3:12 = 31min
+@api_view([ 'GET' ])
+def stat_view( request ):
+    """
+/api/stats/?date_start=2022-07-01&date_end=2022-10-28&metric=count
+    """
+    start  = request.query_params.get( 'date_start' )
+    end    = request.query_params.get( 'date_end' )
+    metric = request.query_params.get( 'metric' )
+    ok = start and end and metric
+    if not ok: return Response( "Ok" )
+    #
+    start = datetime.strptime( start, FOMAT )
+    end = datetime.strptime( end, FOMAT )
+    orders = Order.objects.all().filter(
+        date__year__gte  = start.year,
+        date__month__gte = start.month,
+        date__year__lte  = end.year,
+        date__month__lte = end.month
+    )
+    ls = []
+    for item in orders:
+        products = item.products.all()
+        count = len( products )
+        total = products.aggregate( Sum( 'price' ))['price__sum']
+        date = item.date.strftime( FOMAT )
+        if metric == "count":
+            ls.append({ date: count })
+        else:
+            ls.append({ date: '{0:.2f}'.format( total )})
+    return HttpResponse( json.dumps( ls ))
+################################################################
+# log:

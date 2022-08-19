@@ -30,12 +30,7 @@ class OrderSerializer( serializers.ModelSerializer ):
         instance.date = validated_data.get( 'date', instance.date )
         instance.products.clear();
         products_data = validated_data.pop( 'products' );
-        for product in products_data:
-            qset = Product.objects.filter( **product )
-            if len( qset ):
-                instance.products.add( qset[0] )
-            else:
-                instance.products.add( Product.objects.create( **product ))
+        add_products( products_data, instance )
         instance.save()
         return instance
 ################################################################
