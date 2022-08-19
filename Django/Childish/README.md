@@ -11,7 +11,7 @@ mail: admin@admin.com
 pass: password123
 ```
 
-at api/ there is a *pagination*, and ONE CAN SYMPLY POST an
+at api/ there is a *pagination*, and ONE CAN SIMPLY POST an
 order as well, for example in a *json* format with something
 like:
 ```
@@ -42,7 +42,7 @@ if there is no such product it will be created here.
 To make ***RUD*** request the *primary key* is used, for
 example ``http://127.0.0.1:8000/api/3``
 
-For the statistics a *json* ***HttpResponse*** is return, for example at:
+For the statistics a *json* ***HttpResponse*** is returned, for example at:
 ```
 /api/stats/?date_start=2022-07-01&date_end=2022-10-28&metric=count
 ```
