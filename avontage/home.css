@@ -1,0 +1,173 @@
+:root {
+    --dark-white:   hsl( 2, 6%, 90%);
+    --light-gray:   hsl( 15, 5%, 85%);
+    --mid-gray:     hsl( 30, 7%, 50%);
+    --mid-blue:     hsl( 210, 65%, 50%);
+    --dark-grey:    hsl( 240, 18%, 30%);
+    --dark-blue:    hsl(220, 71%, 32%);
+    --violet:       hsl( 250, 45%, 40% );
+    --red:          hsl( 15, 82%, 40% );
+    --yellow:       hsl( 45, 80%, 52% );
+    --light-green:  hsl(120,20%,35%);
+    --dark-green:   hsl(120,20%,32%);    
+    --select-width: 50%;
+}
+* { /* that's some trick */
+    box-sizing: border-box; 
+}
+body {
+    background-color: var( --dark-grey );
+}
+#cont {
+    padding:         2vw;
+    display:         flex;
+    justify-content: center;
+}
+#plot {
+    width:                 70vw;
+    display:               grid;
+    grid-template-columns: 85% 15%;
+    grid-template-rows:    15vh 15vh 15vh 15vh 15vh;
+    padding-right:         2vw;
+}
+#barchart {
+    /*height:           60vh;*/
+    display:          flex;
+    background-color: var( --violet );
+    grid-column:      1;
+    grid-row:         1/5;
+}
+#timeaxis {
+    /*height:           1vh;*/
+    display:          flex;
+    font-size:        4vh;
+    font-family:      monospace;
+    color:            var( --red );
+    background-color: var( --yellow );
+    grid-column: 1;
+    grid-row:    5;
+}
+.vaxis {
+    font-size:        5vh;
+}
+.vA {
+    background-color: hsl( 240, 60%, 40% );
+    color:            hsl( 20, 20%, 70% );
+    grid-column: 2;
+    grid-row:    1;
+}
+.vB {
+    background-color: hsl( 235, 65%, 50% );
+    color:            hsl( 20, 20%, 70% );
+    grid-column: 2;
+    grid-row:    2;
+}
+.vC {
+    background-color: hsl( 230, 70%, 60% );
+    color:            hsl( 235, 65%, 50% );
+    grid-column: 2;
+    grid-row:    3;
+}
+.vD {
+    background-color: hsl( 220, 80%, 70% );
+    color:            hsl( 240, 60%, 40% );
+    grid-column: 2;
+    grid-row:    4;
+}
+.vE {
+    background-color: hsl( 200, 20%, 70% );
+    color:            hsl( 250, 40%, 20% );
+    grid-column: 2;
+    grid-row:    5;
+}
+#auto {
+    width:    var( --select-width );
+    position: relative;                
+    display:  inline-block;
+}
+input, .item {
+    padding:     0.8vw;     /* re */
+    font-family: monospace; /* pe */
+    font-size:   1.3vw;     /* te */
+}
+input[type=text] {
+    width:            100%;
+    background-color: var( --dark-white );
+}
+#list {
+    position: absolute;
+    border:   none;
+    z-index:  1000;
+    top:      100%;
+    left:     0;
+    right:    0;
+}
+#list div {
+    cursor:           pointer;
+    background-color: var( --light-gray );
+    border-bottom:    1px solid var( --mid-gray );
+}
+#list div:hover {
+    background-color: var( --dark-white );
+}
+#menu {
+    width:          38%;
+    display:        flex;
+    flex-direction: column;
+}
+#form {
+    margin-top:       4vh;
+}
+select {
+    margin-top:       4vh;
+    width:            var( --select-width );
+    padding:          0.8vw;
+    color:            var( --light-gray );
+    border:           solid 1px grey;
+    font-family:      "Courier", serif;
+}
+#intval {
+    background-color: var( --dark-grey );                
+}
+#days {
+    background-color: var( --mid-gray );
+}
+p {
+    margin-top: 2vh;
+}
+.light-green {
+    background-color: var( --light-green );
+}
+.dark-green {
+    background-color: var( --dark-green );
+}
+.bar {
+    display:        flex;
+    flex-direction: column;
+    width:          100%;
+}
+.tbar {
+    width: 100%;
+}
+.value {
+    background-color: var( --dark-blue );
+}
+#submit {
+    background-color: var( --mid-blue );
+    color:            var( --light-gray );
+}
+#echo {
+    background-color: hsl(280, 80%, 20%);
+    color:            hsl(340, 80%, 45%);
+    height:           40vh;
+    width:            100%;
+}
+#echo p {
+    margin-top: 3%;
+    margin-left: 5%;
+    font-family: monospace;
+    font-size: 4vh;
+}
+.border {
+    background-color: blue;
+}
